@@ -1,0 +1,55 @@
+#:include connected.kv
+#:include initializing.kv
+#:include settings.kv
+#:include submitscores.kv
+
+<Login>:
+    BoxLayout
+        id: login_layout
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+
+        Image:
+            source: 'logo.png'
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Login'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: login
+                focus: True
+                multiline:False
+                write_tab: False
+
+        BoxLayout:
+            orientation: 'vertical'
+            Label:
+                text: 'Password'
+                halign: 'left'
+                font_size: 18
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: password
+                multiline:False
+                write_tab: False
+                password:True
+
+        Button:
+            text: 'Log In'
+            id: thebutton
+            font_size: 24
+            on_press: root.do_login(login.text, password.text);
+
+        Label:
+            id: status
+            text: ''
+            font_size: 16
+            size_hint_y: 0.1

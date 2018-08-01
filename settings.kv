@@ -1,0 +1,89 @@
+<Settings>:
+    canvas:
+        Color:
+            rgba: 0.333, 0.466, 0.2, 1
+        Rectangle:
+            pos: self.pos
+            size: self.size
+    BoxLayout:
+        orientation: 'vertical'
+        padding: [10,50,10,50]
+        spacing: 50
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Path to SM5 Folder (e.g., C:\Program Files\StepMania 5)'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: sm5dir
+                multiline:False
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'Path to User Data Folder'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: datadir
+                multiline:False
+
+        BoxLayout:
+            orientation: 'vertical'
+
+            Label:
+                text: 'LocalProfile ID (Leave blank to upload all scores found on this PC)'
+                font_size: 18
+                halign: 'left'
+                text_size: root.width-20, 20
+
+            TextInput:
+                id: localprofile
+                multiline:False
+
+        BoxLayout:
+            orientation: 'vertical'
+            padding: [0, 0, 0, 0]
+            size_hint_y: 0.2
+            BoxLayout:
+                orientation: 'horizontal'
+
+                Label:
+                    text: 'Upload Grade F Results'
+                    halign: 'left'
+                CheckBox:
+                    id: uploadfails
+
+        BoxLayout:
+            orientation: 'vertical'
+            size_hint_y: 0.2
+            padding: [0, 0, 0, 0]
+            BoxLayout:
+                orientation: 'horizontal'
+
+                Label:
+                    text: 'TBD'
+                    halign: 'left'
+                CheckBox:
+                    id: tbd
+
+        BoxLayout:
+            orientation: 'horizontal'
+
+            Button:
+                text: "Apply"
+                font_size: 24
+                on_press: root.apply()
+
+            Button:
+                text: "Cancel"
+                font_size: 24
+                on_press: root.cancel()

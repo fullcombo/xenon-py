@@ -1,0 +1,21 @@
+<Connected>:
+    BoxLayout:
+        orientation: 'vertical'
+
+        Label:
+            text: "You are now connected"
+            font_size: 32
+        Button:
+            text: "Submit Scores"
+            font_size: 24
+            on_press: root.submitscores()
+        Button:
+            text: "Settings"
+            font_size:24
+            size_hint_y: 0.4
+            on_press: root.settings()
+        Button:
+            text: "Log Off"
+            font_size: 24
+            size_hint_y: 0.2
+            on_press: root.disconnect()
